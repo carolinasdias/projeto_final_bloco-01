@@ -3,13 +3,30 @@ package Livraria;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Optional;
+
+import Livraria.controller.LivrariaController;
+import Livraria.model.Livro;
 
 public class Menu {
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
+		
+		LivrariaController produto = new LivrariaController();
+		
 
-		int opcao;
+		int opcao, id;
+		float preco;
+		int tipo;
+		String nome, autor;
+		
+		Livro L1 = new Livro(1, 1, "borboleta", 10, "joao");
+		L1.visualizar();
+		
+		
+				
+
 
 		while (true) {
 			
@@ -46,42 +63,37 @@ public class Menu {
 			
 			switch(opcao) {
 			case 1:
-				System.out.println("\n Cadastrar Livro\n");
-				keyPress();
+				System.out.println("Digite o nome do livro");
 				break;
+	
+	
 			case 2:
-				System.out.println("\n Listar todos os Livros\n");
-				keyPress();
+	
+				System.out.println("Listar todos os Livros");
+	
 				break;
+	
 			case 3:
 				System.out.println("\n Buscar Livro por ID\n");
-				keyPress();
+		
 				break;
 			case 4:
 				System.out.println("\n Atualizar Livro\n");
-				keyPress();
+	
 				break;
 			case 5:
 				System.out.println("\n Deletar Livro\n");
-				keyPress();
+	
 				break;
 			default:
 				System.out.println("\n Opção inválida\n");
-				keyPress();
-				break;	
+	
+				break;
 			}
 
 		}
-
-	}
+	
       
-	private static void keyPress() {
-		try {
-			System.out.println("\nPressione Enter para Continuar");
-			System.in.read();
-		} catch (IOException e) {
-			System.out.println("Pressione enter, por favor");
-		}
 		
 	}
     
